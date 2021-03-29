@@ -1,0 +1,197 @@
+<head>
+
+  <link href="https://fonts.gstatic.com" rel="preconnect"></link>
+<link href="https://fonts.googleapis.com/css2?family=Chango&amp;display=swap" rel="stylesheet"></link>
+
+
+
+  
+<style>
+  
+  #console {
+    font-family: 'Chango', cursive;
+    background-color: skyblue;
+    border-radius:15px;
+    padding: 10px;
+    color:white;
+    text-align: center;
+    max-width:400px;
+  }
+  
+  #seconds-counter {
+    color: orange;
+    }
+  #life {
+    color:green;
+    font-weight: bold;
+  }
+  
+  #love {
+    color: red;
+    font-weight: bold;
+  }
+  
+  #hunger {
+    color: brown;
+  }
+  
+  #hygiene {
+    color: blue;
+  }
+  #image {
+    width: 75%;
+  }
+  
+  #table1 {
+    border: solid 3px black;
+    border-collapse: collapse;
+    
+    width: 100%;
+    
+    background-color: white;
+    margin-bottom: -50px;
+    position: relative;
+    
+  }
+  
+  tr , td {
+    
+    border: solid 3px black;
+    
+  }
+  
+  #btns > button {
+    padding: 15px;
+    border: solid 3px black;
+    width: 22%;
+    background-color:white;
+   
+  }
+  
+  
+</style>
+
+</head>
+<div id="console">
+<h1>Webochi</h1>
+<h4>Your loved web creature💜</h4>
+<table id="table1">
+  <tbody><tr>
+  <td colspan="2">
+  ⌛<span id="seconds-counter"></span>
+  
+  </td>
+    
+      
+  </tr>
+  
+    <tr>
+      <td>
+🌱 <span id="life"></span>
+  </td>
+  <td>
+   ♥️ <span id="love"></span>
+      </td>
+    </tr> 
+  <tr>
+<td>🍎 <span id="hunger"></span>
+  </td>
+    <td>
+    🚿<span id="hygiene"></span></td>
+</tr>
+  
+  </tbody></table>
+<div id="image"></div>
+
+
+  <div class="separator" style="clear: both;"><img alt="webochi" src="https://1.bp.blogspot.com/-rZhuBOt-2ms/YFssNa8VuYI/AAAAAAAACbY/hw_wjjwGhb8Z5IKpdoNtyZ8pd_rlk434gCNcBGAsYHQ/s200/ezgif-7-8d5db2e01235.gif" width="100%" /></div>
+<div id="btns">
+<button onclick="feed()">Feed</button>
+<button onclick="">Take care</button>
+
+<button onclick="">Clean</button>
+
+<button onclick="">Cure </button>
+  
+</div>
+  <p><i>⚠️ If you close or refresh this page a new Webochi will replace this one.</i></p>
+
+</div> <!--end div console-->
+<script>
+  
+  var life = 100;
+  var lifeShow = document.getElementById('life');
+  
+  var hunger = 100;
+  var hungerShow = document.getElementById('hunger');
+  
+  var hygiene = 100;
+  var hygieneShow = document.getElementById('hygiene');
+  
+  function startGame(){
+  var name;
+  
+
+  var love = 100;
+  var loveShow = document.getElementById('love');
+
+  var lifetime = 100;
+  var loveShow = document.getElementById('love');
+
+  var image = '' ;
+  lifeShow.innerHTML = life;
+  loveShow.innerHTML = love;
+  hungerShow.innerHTML = hunger;
+  hygieneShow.innerHTML = hygiene;
+
+    
+  
+  }//End Function startGame
+  startGame();
+
+
+    var seconds = 0;
+    var yaris = 0;
+var el = document.getElementById('seconds-counter');
+
+function incrementSeconds() {
+    seconds += 1;
+    el.innerText =
+seconds + "s";
+    if (seconds % 100 == 0) {
+      yaris++;
+      
+    }
+  el.innerText += ' ' + yaris + " yaris";
+
+
+}
+
+var cancel = setInterval(incrementSeconds, 1000);
+
+function hungerDecrease(){
+  hunger--;
+  hungerShow.innerHTML = hunger;
+}
+  
+var cancel2 = setInterval(hungerDecrease,10000);
+  
+  function feed(){
+    if (hunger <= 90){
+      
+      hunger = hunger + 10;
+      
+      
+      
+    }
+    
+    else {
+      hunger = 100;
+    }
+    
+    hungerShow.innerHTML = hunger;
+    
+  }
+  
+  
+</script>
